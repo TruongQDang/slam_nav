@@ -7,5 +7,9 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 
+install(DIRECTORY
+  launch description
+  DESTINATION share/${PROJECT_NAME}
+)
 
 ament_package()
