@@ -25,7 +25,7 @@ def generate_launch_description():
                 '/world/Moving_robot/model/vehicle_blue/joint_state@'
                 'sensor_msgs/msg/JointState[gz.msgs.Model',
                 '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
-                'tf2_msgs/msg/TFMessage[gz.msgs.Pose_V'
+                '/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V'
             ],
             remappings=[
                 ('/world/Moving_robot/model/vehicle_blue/joint_state', '/joint_states'),
