@@ -114,7 +114,6 @@
         </collision>
         
 
-
         <sensor name='gpu_lidar' type='gpu_lidar'>
           <!-- <pose relative_to='lidar_frame'>0 0 0 0 0 0</pose> -->
           <topic>lidar</topic>
@@ -144,6 +143,17 @@
           <visualize>true</visualize>
         </sensor>
       </link>
+
+       <!-- Base footprint -->
+          <link name="base_footprint">
+      <pose>0 0 0 0 0 0</pose> <!-- Positioned at ground level -->
+    </link>
+
+    <!-- Fixed joint connecting base_footprint to base_link -->
+    <joint name="base_footprint_joint" type="fixed">
+      <parent>base_footprint</parent>
+      <child>chassis</child>
+    </joint>
 
       <link name='left_wheel'>
         <pose>0.554283 0.625029 -0.025 -1.5707 0 0</pose>
