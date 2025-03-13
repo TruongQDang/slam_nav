@@ -17,7 +17,7 @@ def generate_launch_description():
                 os.path.join(
                     pkg_ros_gz_sim_demos,
                     'models',
-                    '/home/truongdang/Documents/slam_nav_ws/src/slam_nav/description/my_lidar.sdf'
+                    '/home/truongdang/Documents/slam_nav_ws/src/slam_nav/description/slam_world.sdf'
                 )
             ]
         ),
