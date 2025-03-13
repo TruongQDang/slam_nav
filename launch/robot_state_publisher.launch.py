@@ -8,12 +8,12 @@ from launch.actions import DeclareLaunchArgument
 
 def generate_launch_description():
         # Package name and Path to xacro file
-        pkg_name = 'slam_nav'
+        package_name = 'slam_nav'
         file_subpath = 'description/robot.urdf.xacro'
 
         # Parse robot description from xacro
         xacro_file = os.path.join(
-                get_package_share_directory(pkg_name),
+                get_package_share_directory(package_name),
                 file_subpath
         )
         robot_description = xacro.process_file(xacro_file).toxml()

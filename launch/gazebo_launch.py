@@ -13,7 +13,7 @@ def generate_launch_description():
 
         rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory(package_name),'launch','robotstatepubliser_launch.py'
+                    get_package_share_directory(package_name),'launch','robot_state_publisher.launch.py'
                 )]), 
                 launch_arguments={'use_sim_time': 'true'}.items()
         )
