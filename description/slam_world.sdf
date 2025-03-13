@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <sdf version='1.10'>
   <world name='gpu_lidar_sensor'>
     <physics name='1ms' type='ignored'>
