@@ -24,7 +24,7 @@ def generate_launch_description():
         world = os.path.join(
                 get_package_share_directory(package_name),
                 'worlds',
-                'empty_world.world')    
+                'slam_world.world')    
         gazebo = IncludeLaunchDescription(
                         PythonLaunchDescriptionSource([os.path.join(
                                 get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')]),
