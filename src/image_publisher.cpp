@@ -17,7 +17,7 @@ int main(int argc, char ** argv) {
         image_transport::Publisher pub = it.advertise("camera/image", 1);
 
         char imageset_path[500];
-        string pre_path = "/home/truongdang/Documents/visual_slam/ros_mono_vo/kitti_dataset/data_odometry_gray/00/image_0/";
+        string pre_path = "/home/truongdang/Documents/visual_slam/kitti_dataset/data_odometry_gray/dataset/sequences/00/image_0/";
         int num_frame = 0;
 
         rclcpp::WallRate loop_rate(30);

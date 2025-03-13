@@ -39,17 +39,6 @@ ament_target_dependencies(
 install(TARGETS vo_node 
         DESTINATION lib/${PROJECT_NAME})
 
-add_executable(odom_publisher src/odom_publisher.cpp)
-ament_target_dependencies(
-        odom_publisher
-        geometry_msgs
-        rclcpp
-        tf2
-        tf2_ros)
-
-install(TARGETS odom_publisher
-        DESTINATION lib/${PROJECT_NAME})
-
 install(DIRECTORY launch description worlds config
         DESTINATION share/${PROJECT_NAME}/)
 

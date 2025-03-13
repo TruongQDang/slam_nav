@@ -28,7 +28,8 @@ private:
 
 VisualOdometry::VisualOdometry()
 {
-        get_calibration_parameters("/home/truongdang/Documents/visual_slam/ros_mono_vo/kitti_dataset/data_odometry_gray/00/calib.txt", focal, pp);
+        get_calibration_parameters("/home/truongdang/Documents/visual_slam/kitti_dataset/data_odometry_gray/dataset/sequences/00/calib.txt", focal, pp);
+        draw_ground_truth_trajectory(traj, "/home/truongdang/Documents/visual_slam/kitti_dataset/data_odometry_poses/dataset/poses/00.txt");
 }
 
 pair<cv::Mat, cv::Mat> VisualOdometry::run(Mat &input_image)
