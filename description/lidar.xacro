@@ -3,11 +3,11 @@
 
         <joint name="lidar_joint" type="fixed">
                 <parent link="chassis" />
-                <child link="lidar_link" />
+                <child link="lidar_frame" />
                 <origin xyz="0.13 0 0.15" rpy="0 0 0" />
         </joint>
 
-        <link name="lidar_link">
+        <link name="lidar_frame">
                 <visual>
                         <geometry>
                                 <cylinder radius="0.05" length="0.04" />
@@ -25,7 +25,7 @@
         </link>
 
 
-        <gazebo reference="lidar_link">
+        <gazebo reference="lidar_frame">
                 <material>Gazebo/Black</material>
 
                 <sensor name="gpu_lidar" type="gpu_lidar">
@@ -46,8 +46,8 @@
                                         <resolution>0.01</resolution>
                                 </range>
                         </lidar>
-                        <alwaysOn>1</alwaysOn>
                         <visualize>true</visualize>
+                        <gz_frame_id>lidar_frame</gz_frame_id>
                 </sensor>
         </gazebo>
 

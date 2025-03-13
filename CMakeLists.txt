@@ -8,15 +8,11 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 install(DIRECTORY
-        launch/
-        DESTINATION share/${PROJECT_NAME}/launch)
+        launch description worlds config
+        DESTINATION share/${PROJECT_NAME}/)
 
-install(DIRECTORY
-        description/
-        DESTINATION share/${PROJECT_NAME}/description)
-
-install(DIRECTORY 
-        worlds/
-        DESTINATION share/${PROJECT_NAME}/worlds)
+# install(TARGETS
+#         talker
+#         DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
