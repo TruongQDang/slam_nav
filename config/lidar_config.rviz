@@ -5,6 +5,9 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /Grid1
+        - /LaserScan1
+        - /TF1
       Splitter Ratio: 0.504601240158081
     Tree Height: 667
   - Class: rviz_common/Selection
@@ -37,7 +40,7 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 10
+      Plane Cell Count: 30
       Reference Frame: <Fixed Frame>
       Value: true
     - Alpha: 1
@@ -62,7 +65,7 @@ Visualization Manager:
       Position Transformer: XYZ
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.05000000074505806
       Style: Flat Squares
       Topic:
         Depth: 5
@@ -85,17 +88,21 @@ Visualization Manager:
           Value: true
         vehicle_blue:
           Value: true
+        vehicle_blue/base_footprint:
+          Value: true
         vehicle_blue/caster:
           Value: true
         vehicle_blue/chassis:
           Value: true
-        vehicle_blue/chassis/gpu_lidar:
-          Value: true
         vehicle_blue/left_wheel:
+          Value: true
+        vehicle_blue/lidar_link:
+          Value: true
+        vehicle_blue/lidar_link/gpu_lidar:
           Value: true
         vehicle_blue/right_wheel:
           Value: true
-      Marker Scale: 1
+      Marker Scale: 2
       Name: TF
       Show Arrows: true
       Show Axes: true
@@ -103,13 +110,17 @@ Visualization Manager:
       Tree:
         odom:
           vehicle_blue:
+            vehicle_blue/base_footprint:
+              {}
             vehicle_blue/caster:
               {}
             vehicle_blue/chassis:
-              vehicle_blue/chassis/gpu_lidar:
-                {}
+              {}
             vehicle_blue/left_wheel:
               {}
+            vehicle_blue/lidar_link:
+              vehicle_blue/lidar_link/gpu_lidar:
+                {}
             vehicle_blue/right_wheel:
               {}
       Update Interval: 0
@@ -158,7 +169,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 10.72309398651123
+      Distance: 24.692655563354492
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -173,10 +184,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.43539828062057495
+      Pitch: 0.8103979229927063
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.603581428527832
+      Yaw: 3.738586187362671
     Saved: ~
 Window Geometry:
   Displays:
@@ -192,5 +203,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1200
-  X: 2437
+  X: 1360
   Y: 658
