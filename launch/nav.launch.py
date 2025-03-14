@@ -12,34 +12,32 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
         package_name = 'slam_nav' 
- 
+
         gazebo = IncludeLaunchDescription(
                         PythonLaunchDescriptionSource([os.path.join(
                                 get_package_share_directory(package_name), 'launch', 'gz.launch.py')])
         )
-        
+
         rviz = Node(
                 package='rviz2',
                 executable='rviz2',
-                arguments=['-d', os.path.join(get_package_share_directory(package_name), 'config', 'sim_config.rviz')],
+                arguments=['-d', os.path.join(get_package_share_directory(package_name), 'config', 'nav_config.rviz')],
                 output='screen'
         )
 
-        teleop_keyboard = Node(
-                package='teleop_twist_keyboard',
-                executable='teleop_twist_keyboard',
-                output='screen',
-                prefix = 'xterm -e',
-                arguments=[
-                        '--ros-args',
-                        '-r',
-                        '/cmd_vel:=/diff_controller/cmd_vel',
-                        '-p',
-                        'stamped:=true']
-        )
+        map = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                        get_package_share_directory('slam_toolbox'), 'launch', 'online_async_launch.py')]),
+                        launch_arguments={'slam_params_file': './src/slam_nav/config/mapper_params_online_async.yaml'}.items())
+        
+        nav2 = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                        get_package_share_directory('nav2_bringup'), 'launch', 'navigation_launch.py')]),
+                        launch_arguments={'use_sim_time': 'true'}.items()) 
 
         return LaunchDescription([
                 gazebo,
                 rviz,
-                teleop_keyboard
+                map,
+                nav2
         ])
