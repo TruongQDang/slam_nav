@@ -8,8 +8,6 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
 
-
-
 def generate_launch_description():
         package_name = 'slam_nav' 
  
@@ -30,12 +28,9 @@ def generate_launch_description():
                 executable='teleop_twist_keyboard',
                 output='screen',
                 prefix = 'xterm -e',
-                arguments=[
-                        '--ros-args',
-                        '-r',
-                        '/cmd_vel:=/diff_controller/cmd_vel',
-                        '-p',
-                        'stamped:=true']
+                parameters=[{'stamped': True}],
+                remappings=[('/cmd_vel', '/diff_controller/cmd_vel')]
+                        
         )
 
         return LaunchDescription([

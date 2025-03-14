@@ -34,10 +34,19 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource([os.path.join(
                         get_package_share_directory('nav2_bringup'), 'launch', 'navigation_launch.py')]),
                         launch_arguments={'use_sim_time': 'true'}.items()) 
+        
+        twist_stamper = Node(
+                package='twist_stamper',
+                executable='twist_stamper',
+                parameters=[{'use_sim_time': True}],
+                remappings=[('/cmd_vel_in', '/cmd_vel_nav'),
+                            ('/cmd_vel_out', '/diff_controller/cmd_vel')],
+        )
 
         return LaunchDescription([
                 gazebo,
                 rviz,
                 map,
-                nav2
+                nav2,
+                twist_stamper
         ])
